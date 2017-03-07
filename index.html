@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Statements</h1>
+
+<p>Statements are separated by semicolons.</p>
+
+<p>The variables x, y, and z are assigned the values 5, 6, and 11.</p>
+
+<p>Then the value of z is displayed in the paragraph below:</p>
+
+<p id="demo"></p>
+
+<script>
+/*spreading*/
+// let x, y, z;
+// x = 5;
+// y = 6;
+// c = 7;
+// z = [x,y,c];
+// let params = [ "hello", true, 7 ]
+// let other = [ 1, 2, ...params ]
+// console.log('sd'+ other)
+// let other2 = other.map(n => n + 1);
+// console.log('sd'+ other2)
+
+/*Destructing*/
+// function doWork() {
+//   let test = {
+//     x:'Mohamed',
+//     y:'Mamdouh',
+//     z:'Ahmed',
+//   }
+//   return test;
+// }
+//
+// let {x,y,z} = doWork();
+// console.log('x is : ', x)
+// console.log('y is : ', y)
+// console.log('z is : ', z)
+
+//default parameters values
+// function test(x='Mohamed', y='Mamdouh') {
+//   console.log('x is : ', x)
+//   console.log(`y is :  ${y}`)
+// }
+// test()
+
+/*OOP*/
+class Employee {
+  constructor(firstName, familyName) {
+    this._firstName = firstName;
+    this._familyName = familyName;
+  }
+
+  getFullName() {
+    return `${this._firstName} ${this._familyName}`;
+  }
+}
+
+// Manager still works same as before but without repeated code
+class Manager extends Employee {
+  constructor(firstName, familyName) {
+    super(firstName, familyName);
+    this._managedEmployees = [];
+  }
+  getEmployess() {
+    return this._managedEmployees;
+  }
+  addEmployee(employee) {
+    this._managedEmployees.push(employee);
+  }
+}
+
+let do7a = new Manager('Mohamed', 'Mamdouh');
+do7a.addEmployee('Employee1');
+do7a.addEmployee('Employee2');
+do7a.addEmployee('Employee3');
+console.log('do7a ' , do7a.getFullName())
+console.log('# of Employess ' ,  do7a.getEmployess())
+
+</script>
+
+</body>
+</html>
